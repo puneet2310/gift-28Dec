@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Heart, Music, Image, Mic, Star, ArrowLeft, Key, Gift, Calendar, Video, Lock, Unlock, HelpCircle, CheckCircle, Volume2, VolumeX, Play, Pause, MessageCircle, RefreshCw, Sparkles, Pin, ChevronDown, Mail, Feather, Stamp, Leaf, Type, Quote } from 'lucide-react';
+import { Heart, Music, Image, ImageIcon, Mic, Star, Lightbulb, ArrowLeft, Key, Gift, Calendar, Video, Lock, Unlock, HelpCircle, CheckCircle, Volume2, VolumeX, Play, Pause, MessageCircle, RefreshCw, Sparkles, Pin, ChevronDown, Mail, Feather, Stamp, Leaf, Type, Quote } from 'lucide-react';
 
 // ==========================================
 // 1. DATA & CONFIGURATION
@@ -430,6 +430,15 @@ const FlappyLove = () => {
   );
 };
 import confetti from 'canvas-confetti'; // Remove if you don't have this package
+import LoveSudoku from './LoveSudoku';
+import RelationshipContract from './RelationshipContract';
+import MoodClinic from './ModdyClinic';
+import CrackTheCode from './CrackTheCode';
+import MemoryMatchGame from './MemoryMatchGame';
+import HangingGallery from './HangingGallery';
+import HeroVerticalRopes from './HeroVerticalRopes';
+import TimelineSection from './TimeLineSection';
+import PhotoCarousel from './PhotoCarousel';
 
 const CakeCeremony = () => {
   const [step, setStep] = useState(0); 
@@ -710,41 +719,7 @@ const CelebrationAnimation = () => {
   );
 };
 
-const PhotoCarousel = () => {
-  const [rotation, setRotation] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    const interval = setInterval(() => { setRotation(prev => prev - 45); }, 3000);
-    return () => { clearInterval(interval); window.removeEventListener('resize', checkMobile); };
-  }, []);
-  
-  const translateZ = isMobile ? '160px' : '280px';
-  const width = isMobile ? '120px' : '140px';
-  const height = isMobile ? '180px' : '200px';
 
-  return (
-    <div className="relative w-full h-[300px] md:h-[400px] flex items-center justify-center overflow-visible perspective-1000 py-10 z-20">
-      <div className="relative transform-style-3d transition-transform duration-1000 ease-out" style={{ width: width, height: height, transform: `rotateY(${rotation}deg)` }}>
-        {APP_DATA.carouselPhotos.map((photo, index) => {
-          const rotateY = index * 45; 
-          return (
-            <div key={index} className="absolute inset-0 bg-white p-2 shadow-[0_0_20px_rgba(255,182,193,0.6)] rounded-2xl border-2 border-white overflow-hidden transform-gpu hover:scale-110 transition-transform duration-300 group" style={{ transform: `rotateY(${rotateY}deg) translateZ(${translateZ})`, backfaceVisibility: 'visible', opacity: 0.95 }}>
-              <div className="w-full h-full rounded-xl overflow-hidden relative">
-                <img src={photo} alt={`Memory ${index}`} className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent pointer-events-none mix-blend-overlay"></div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className="absolute -bottom-10 w-[200px] md:w-[300px] h-[200px] md:h-[300px] bg-rose-500/20 rounded-full blur-[60px] transform rotateX(90deg)"></div>
-      <style>{` .perspective-1000 { perspective: 1000px; } .transform-style-3d { transform-style: preserve-3d; } `}</style>
-    </div>
-  );
-};
 
 const PolaroidGallery = () => {
   return (
@@ -770,70 +745,6 @@ const PolaroidGallery = () => {
   );
 };
 
-const HangingGallery = () => {
-  return (
-    <div className="w-full max-w-6xl mx-auto z-10 relative h-[500px] overflow-hidden">
-       <div className="absolute top-10 left-0 right-0 h-1 bg-white/50 transform -rotate-1 rounded-full shadow-sm"></div>
-       <div className="absolute top-64 left-0 right-0 h-1 bg-white/50 transform rotate-1 rounded-full shadow-sm"></div>
-       <div className="flex justify-around absolute top-10 left-0 right-0">
-          {APP_DATA.carouselPhotos.slice(0, 4).map((photo, idx) => (
-             <div key={idx} className={`relative group origin-top animate-sway ${idx === 0 || idx === 3 ? 'hidden md:block' : ''}`} style={{ animationDelay: `${idx * 0.5}s` }}>
-                <div className="w-0.5 h-16 bg-rose-900/40 mx-auto"></div>
-                <div className="w-4 h-8 bg-amber-700 mx-auto -mt-2 rounded-sm shadow-sm relative z-10"></div>
-                <div className="bg-white p-2 shadow-lg -mt-2 transform rotate-2 group-hover:rotate-0 transition-transform duration-500 w-32 h-32 md:w-40 md:h-40"><img src={photo} className="w-full h-full object-cover" alt="hanging" /></div>
-             </div>
-          ))}
-       </div>
-       <div className="flex justify-around absolute top-64 left-10 right-10">
-          {APP_DATA.carouselPhotos.slice(4, 8).map((photo, idx) => (
-             <div key={idx} className={`relative group origin-top animate-sway ${idx === 0 || idx === 3 ? 'hidden md:block' : ''}`} style={{ animationDelay: `${(idx + 2) * 0.5}s` }}>
-                <div className="w-0.5 h-12 bg-rose-900/40 mx-auto"></div>
-                <div className="w-4 h-8 bg-amber-700 mx-auto -mt-2 rounded-sm shadow-sm relative z-10"></div>
-                <div className="bg-white p-2 shadow-lg -mt-2 transform -rotate-2 group-hover:rotate-0 transition-transform duration-500 w-32 h-32 md:w-40 md:h-40"><img src={photo} className="w-full h-full object-cover" alt="hanging" /></div>
-             </div>
-          ))}
-       </div>
-       <style>{` @keyframes sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } } .animate-sway { animation: sway 4s infinite ease-in-out; } `}</style>
-    </div>
-  );
-};
-
-const HeroVerticalRopes = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-  const ropes = isMobile ? [
-      { x: '10%', photos: [APP_DATA.carouselPhotos[0], APP_DATA.carouselPhotos[2]], speed: '3s' },
-      { x: '90%', photos: [APP_DATA.carouselPhotos[1], APP_DATA.carouselPhotos[3]], speed: '4s' }
-  ] : [
-      { x: '2%', photos: [APP_DATA.carouselPhotos[0], APP_DATA.carouselPhotos[2]], speed: '3s' },
-      { x: '12%', photos: [APP_DATA.carouselPhotos[1]], speed: '4s' },
-      { x: '88%', photos: [APP_DATA.carouselPhotos[5]], speed: '3.5s' },
-      { x: '98%', photos: [APP_DATA.carouselPhotos[6], APP_DATA.carouselPhotos[7]], speed: '4.5s' },
-  ];
-  return (
-    <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
-       {ropes.map((rope, i) => (
-         <div key={i} className="absolute top-0 h-[80vh] w-1 bg-amber-800/80 shadow-sm animate-swing-rope origin-top" style={{ left: rope.x, animationDuration: rope.speed }}>
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-amber-900"></div>
-            {rope.photos.map((photo, j) => (
-               <div key={j} className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center" style={{ top: `${80 + j * 180}px` }}>
-                  <div className="w-3 h-8 bg-amber-600 rounded-sm mb-[-10px] z-20 shadow-md border-r border-amber-900 relative"></div>
-                  <div className={`relative p-1 bg-white shadow-xl transition-all duration-500 ${(i + j) % 2 === 0 ? 'rotate-3' : '-rotate-3'}`} style={{ width: isMobile ? '70px' : '100px' }}>
-                     <div className="aspect-[3/4] overflow-hidden bg-gray-100 mb-1 border border-gray-100"><img src={photo} alt="Mem" className="w-full h-full object-cover" /></div>
-                  </div>
-               </div>
-            ))}
-         </div>
-       ))}
-       <style>{` @keyframes swingRope { 0%, 100% { transform: rotate(1deg); } 50% { transform: rotate(-1deg); } } .animate-swing-rope { animation: swingRope infinite ease-in-out; } `}</style>
-    </div>
-  );
-};
 
 // --- STACK GALLERY WITH DYNAMIC TEXT ---
 const StackGallery = () => {
@@ -875,31 +786,6 @@ const StackGallery = () => {
   );
 };
 
-const TimelineSection = () => {
-  return (
-    <section className="min-h-screen py-20 px-4 relative overflow-hidden">
-       <div className="absolute inset-0 bg-transparent -z-10"></div>
-       <div className="absolute top-0 right-0 opacity-10"><Heart size={200} /></div>
-       <h2 className="text-3xl md:text-5xl font-serif text-center text-rose-900 mb-16 relative z-10">Our Love Story</h2>
-       <div className="max-w-4xl mx-auto relative z-10">
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-rose-200 via-rose-400 to-rose-200 transform md:-translate-x-1/2 rounded-full"></div>
-          {APP_DATA.timeline.map((item, idx) => (
-             <div key={idx} className={`relative flex items-center justify-between md:justify-normal mb-12 ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} group`}>
-                <div className="absolute left-4 md:left-1/2 w-8 h-8 bg-white rounded-full border-4 border-rose-500 transform -translate-x-1/2 z-10 shadow-[0_0_15px_rgba(244,63,94,0.6)] group-hover:scale-125 transition-transform duration-300">
-                   <div className="absolute inset-0 flex items-center justify-center"><div className="w-2 h-2 bg-rose-500 rounded-full animate-pulse"></div></div>
-                </div>
-                <div className="hidden md:block w-1/2"></div>
-                <div className={`ml-12 md:ml-0 w-full md:w-[45%] bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border-l-4 border-rose-400 hover:-translate-y-2 transition-all duration-300 ${idx % 2 === 0 ? 'md:mr-8 text-right md:border-l-0 md:border-r-4' : 'md:ml-8 text-left'}`}>
-                   <span className="inline-block px-3 py-1 bg-rose-100 text-rose-600 rounded-full text-xs font-bold mb-2 shadow-sm">{item.date}</span>
-                   <h3 className="text-xl font-bold text-gray-800">{item.title}</h3>
-                   <p className="text-gray-600 mt-2 text-sm leading-relaxed">{item.desc}</p>
-                </div>
-             </div>
-          ))}
-       </div>
-    </section>
-  )
-}
 
 const ReasonsGenerator = () => {
   const [reason, setReason] = useState("Why do I love you? Let me count the ways...");
@@ -1132,6 +1018,221 @@ const LoveQuiz = ({ onComplete, onClose }) => {
   );
 };
 
+
+const SlidingPuzzle = () => {
+  const [tiles, setTiles] = useState([]);
+  const [isSolved, setIsSolved] = useState(false);
+  const [moves, setMoves] = useState(0);
+  const [isShuffling, setIsShuffling] = useState(true);
+
+  // 3x3 Grid
+  const GRID_SIZE = 3;
+  // Use the first photo from your gallery
+  const PHOTO_URL = APP_DATA.carouselPhotos[0]; 
+
+  // Initialize Solved State
+  const initGame = () => {
+    // Create 0-8 array. 8 is the "empty" tile.
+    const solved = Array.from({ length: GRID_SIZE * GRID_SIZE }, (_, i) => i);
+    setTiles(solved);
+    setIsSolved(true);
+    setMoves(0);
+    setIsShuffling(true);
+    
+    // Shuffle after a short delay so she sees the full image first
+    setTimeout(() => shuffleTiles(solved), 2000);
+  };
+
+  useEffect(() => {
+    initGame();
+  }, []);
+
+  // Shuffle Logic (Simulate random moves to ensure solvability)
+  const shuffleTiles = (currentTiles) => {
+    let tempTiles = [...currentTiles];
+    let emptyIdx = tempTiles.indexOf(GRID_SIZE * GRID_SIZE - 1);
+    let previousIdx = -1;
+
+    // Perform 100 random valid moves
+    for (let i = 0; i < 100; i++) {
+      const neighbors = getNeighbors(emptyIdx);
+      // Don't undo the move we just made
+      const validNeighbors = neighbors.filter(n => n !== previousIdx);
+      const randomNeighbor = validNeighbors[Math.floor(Math.random() * validNeighbors.length)];
+      
+      // Swap
+      [tempTiles[emptyIdx], tempTiles[randomNeighbor]] = [tempTiles[randomNeighbor], tempTiles[emptyIdx]];
+      previousIdx = emptyIdx;
+      emptyIdx = randomNeighbor;
+    }
+
+    setTiles(tempTiles);
+    setIsSolved(false);
+    setMoves(0);
+    setIsShuffling(false);
+  };
+
+  const getNeighbors = (index) => {
+    const neighbors = [];
+    const row = Math.floor(index / GRID_SIZE);
+    const col = index % GRID_SIZE;
+
+    if (row > 0) neighbors.push(index - GRID_SIZE); // Up
+    if (row < GRID_SIZE - 1) neighbors.push(index + GRID_SIZE); // Down
+    if (col > 0) neighbors.push(index - 1); // Left
+    if (col < GRID_SIZE - 1) neighbors.push(index + 1); // Right
+
+    return neighbors;
+  };
+
+  const handleTileClick = (index) => {
+    if (isSolved || isShuffling) return;
+
+    const emptyIdx = tiles.indexOf(GRID_SIZE * GRID_SIZE - 1);
+    const neighbors = getNeighbors(emptyIdx);
+
+    // If clicked tile is adjacent to empty space
+    if (neighbors.includes(index)) {
+      const newTiles = [...tiles];
+      // Swap
+      [newTiles[index], newTiles[emptyIdx]] = [newTiles[emptyIdx], newTiles[index]];
+      setTiles(newTiles);
+      setMoves(m => m + 1);
+      checkWin(newTiles);
+    }
+  };
+
+  const checkWin = (currentTiles) => {
+    const isWin = currentTiles.every((val, index) => val === index);
+    if (isWin) {
+      setIsSolved(true);
+      if (typeof confetti === 'function') confetti({ particleCount: 300, spread: 120 });
+    }
+  };
+
+  return (
+    <section className="py-24 px-4 relative z-10 overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white via-rose-50 to-white -z-20"></div>
+      <div className="absolute top-20 right-20 w-64 h-64 bg-pink-200 rounded-full blur-3xl opacity-30 -z-10"></div>
+
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+        
+        {/* --- LEFT SIDE: THE PUZZLE GAME --- */}
+        <div className="w-full md:w-2/3">
+          <div className="bg-white/40 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/60 shadow-xl flex flex-col items-center">
+            
+            {/* Game Frame */}
+            <div className="relative p-4 bg-white rounded-xl shadow-inner border-2 border-rose-100">
+              
+              <div 
+                className="grid grid-cols-3 gap-1 bg-rose-900 p-1 rounded-lg w-[300px] h-[300px] md:w-[400px] md:h-[400px]"
+                style={{ pointerEvents: isSolved ? 'none' : 'auto' }}
+              >
+                {tiles.map((tileNumber, index) => {
+                  // Check if this is the "Empty" tile (last number)
+                  const isEmpty = tileNumber === GRID_SIZE * GRID_SIZE - 1;
+                  
+                  // Calculate background position
+                  // Col = tileNumber % 3, Row = floor(tileNumber / 3)
+                  const x = (tileNumber % GRID_SIZE) * 100 / (GRID_SIZE - 1);
+                  const y = (Math.floor(tileNumber / GRID_SIZE)) * 100 / (GRID_SIZE - 1);
+
+                  return (
+                    <div
+                      key={index}
+                      onClick={() => handleTileClick(index)}
+                      className={`
+                        relative w-full h-full rounded-md overflow-hidden transition-all duration-200
+                        ${isEmpty && !isSolved ? 'opacity-0 cursor-default' : 'cursor-pointer hover:brightness-110 shadow-sm'}
+                      `}
+                      style={{
+                        backgroundColor: '#eee',
+                        backgroundImage: `url(${PHOTO_URL})`,
+                        backgroundSize: `${GRID_SIZE * 100}%`,
+                        backgroundPosition: `${x}% ${y}%`
+                      }}
+                    >
+                      {/* Grid Numbers (Optional hint) */}
+                      {!isSolved && !isEmpty && (
+                        <div className="absolute bottom-1 right-1 text-[10px] text-white/50 bg-black/20 px-1 rounded">
+                          {tileNumber + 1}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Success Overlay on the Image */}
+              {isSolved && !isShuffling && (
+                <div className="absolute inset-0 z-10 flex items-center justify-center bg-rose-500/10 rounded-xl animate-fade-in">
+                  <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border-2 border-rose-200">
+                    <p className="font-serif text-rose-600 font-bold flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5" /> Perfect Match!
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Controls */}
+            <div className="mt-8 flex gap-6 items-center">
+              <button 
+                onClick={initGame}
+                disabled={isShuffling}
+                className="px-6 py-3 bg-white border-2 border-rose-100 text-rose-500 rounded-full font-bold shadow-sm hover:bg-rose-50 transition-all flex items-center gap-2"
+              >
+                <RefreshCw className={`w-4 h-4 ${isShuffling ? 'animate-spin' : ''}`} /> Shuffle
+              </button>
+              <div className="bg-rose-50 px-6 py-3 rounded-full border border-rose-100">
+                <p className="text-sm font-bold text-rose-400 uppercase tracking-widest">Moves: <span className="text-rose-600 text-lg">{moves}</span></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* --- RIGHT SIDE: THE NOTE --- */}
+        <div className="w-full md:w-1/3 flex flex-col justify-center min-h-[400px]">
+           <div className="relative bg-[#fffcf5] p-8 md:p-12 rounded-tr-[3rem] rounded-bl-[3rem] shadow-[8px_8px_0px_rgba(225,29,72,0.1)] border border-[#e6dbcf] rotate-1 hover:rotate-0 transition-transform duration-500">
+               {/* Paper Texture */}
+               <div className="absolute inset-0 opacity-[0.4] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] rounded-tr-[3rem] rounded-bl-[3rem] pointer-events-none"></div>
+               
+               <div className="relative z-10">
+                 <div className="flex justify-center mb-6">
+                   <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center border-2 border-rose-200">
+                      <ImageIcon className="w-6 h-6 text-rose-500" />
+                   </div>
+                 </div>
+
+                 <h3 className="font-serif text-2xl text-[#5c4033] mb-4 font-bold text-center border-b-2 border-[#5c4033]/10 pb-4">
+                   Picture Perfect Logic
+                 </h3>
+                 
+                 <p className="font-handwriting text-xl text-[#8b5a2b] leading-relaxed text-center mb-8">
+                   "Life is like a puzzle, finding the right pieces to make a beautiful picture. <br/><br/>
+                   Use your logic to slide the tiles and restore this memory of us!"
+                 </p>
+
+                 {isSolved && !isShuffling && (
+                   <div className="bg-white/60 p-4 rounded-xl border border-[#8b5a2b]/10 text-center animate-zoom-in">
+                     <div className="flex justify-center mb-2">
+                       <Star className="w-6 h-6 text-yellow-500 fill-yellow-500 animate-bounce" />
+                     </div>
+                     <p className="font-bold text-rose-600">Solved in {moves} moves!</p>
+                     <p className="text-[10px] uppercase text-gray-400 font-bold mt-1">📸 Screenshot this victory!</p>
+                   </div>
+                 )}
+               </div>
+           </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
 const GiftPage = () => {
   const [stage, setStage] = useState(1); // 1: Question, 2: Angry, 3: Selection, 4: Reveal
   const [shaking, setShaking] = useState(false);
@@ -1317,213 +1418,6 @@ const GiftPage = () => {
   );
 };
 
-const MemoryMatchGame = () => {
-  const [cards, setCards] = useState([]);
-  const [turns, setTurns] = useState(0);
-  const [choiceOne, setChoiceOne] = useState(null);
-  const [choiceTwo, setChoiceTwo] = useState(null);
-  const [disabled, setDisabled] = useState(false);
-  const [isWon, setIsWon] = useState(false);
-
-  // 1. Shuffle Cards
-  const shuffleCards = () => {
-    const selectedPhotos = APP_DATA.carouselPhotos.slice(0, 6);
-    const shuffledCards = [...selectedPhotos, ...selectedPhotos]
-      .sort(() => Math.random() - 0.5)
-      .map((src, index) => ({ src, id: Math.random(), matched: false }));
-
-    setChoiceOne(null);
-    setChoiceTwo(null);
-    setCards(shuffledCards);
-    setTurns(0);
-    setIsWon(false);
-  };
-
-  useEffect(() => {
-    shuffleCards();
-  }, []);
-
-  // 2. Handle Choice (BUG FIXED HERE)
-  const handleChoice = (card) => {
-    // FIX: If the user clicks the same card they just opened, do nothing.
-    if (choiceOne && choiceOne.id === card.id) {
-        return;
-    }
-    
-    choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
-  };
-
-  // 3. Compare Cards
-  useEffect(() => {
-    if (choiceOne && choiceTwo) {
-      setDisabled(true);
-      if (choiceOne.src === choiceTwo.src) {
-        setCards(prevCards => {
-          return prevCards.map(card => {
-            if (card.src === choiceOne.src) {
-              return { ...card, matched: true };
-            } else {
-              return card;
-            }
-          });
-        });
-        resetTurn();
-      } else {
-        setTimeout(() => resetTurn(), 1000);
-      }
-    }
-  }, [choiceOne, choiceTwo]);
-
-  // 4. Check Win
-  useEffect(() => {
-    if (cards.length > 0 && cards.every(card => card.matched)) {
-      setIsWon(true);
-      if (typeof confetti === 'function') confetti({ particleCount: 300, spread: 100, origin: { x: 0.7 } });
-    }
-  }, [cards]);
-
-  const resetTurn = () => {
-    setChoiceOne(null);
-    setChoiceTwo(null);
-    setTurns(prevTurns => prevTurns + 1);
-    setDisabled(false);
-  };
-
-  return (
-    <section className="py-24 px-4 relative z-10 overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-rose-100 rounded-full blur-3xl opacity-50 -z-10"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-100 rounded-full blur-3xl opacity-50 -z-10"></div>
-
-      <div className="max-w-6xl mx-auto">
-        
-        {/* --- SECTION HEADING --- */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full text-rose-600 text-sm font-bold mb-4 shadow-sm border border-rose-100">
-             <Star className="w-4 h-4 fill-rose-500" /> <span>Interactive Memories</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-serif text-rose-900 mb-4">The Memory Game</h2>
-          <p className="font-handwriting text-xl text-rose-800/70">"Every picture tells a story... can you match them all?"</p>
-        </div>
-
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          
-          {/* --- LEFT SIDE: ELEGANT CARD GRID --- */}
-          <div className="w-full lg:w-2/3">
-            <div className="bg-white/40 backdrop-blur-xl p-6 md:p-8 rounded-[2.5rem] border border-white/60 shadow-xl relative">
-               {/* Frame Screws (Visual Detail) */}
-               <div className="absolute top-6 left-6 w-3 h-3 bg-rose-200 rounded-full"></div>
-               <div className="absolute top-6 right-6 w-3 h-3 bg-rose-200 rounded-full"></div>
-               <div className="absolute bottom-6 left-6 w-3 h-3 bg-rose-200 rounded-full"></div>
-               <div className="absolute bottom-6 right-6 w-3 h-3 bg-rose-200 rounded-full"></div>
-
-               <div className="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
-                {cards.map(card => (
-                  <div 
-                    key={card.id} 
-                    className="relative aspect-[3/4] cursor-pointer perspective-1000 group"
-                    // LOGIC UPDATED: Prevent clicks if disabled or card is already matched
-                    onClick={() => !disabled && !card.matched && handleChoice(card)}
-                  >
-                    <div className={`w-full h-full transition-all duration-700 transform-style-3d shadow-md hover:shadow-xl rounded-xl ${card === choiceOne || card === choiceTwo || card.matched ? 'rotate-y-180' : ''}`}>
-                      
-                      {/* FRONT (Pattern - Royal Rose Style) */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-rose-900 to-rose-700 rounded-xl flex items-center justify-center backface-hidden border-2 border-rose-300/30">
-                        <div className="w-[85%] h-[85%] border border-rose-400/30 rounded-lg flex items-center justify-center">
-                           <Heart className="w-6 h-6 text-rose-200/50 fill-rose-200/50" />
-                        </div>
-                      </div>
-
-                      {/* BACK (Photo - Polaroid Style) */}
-                      <div className="absolute inset-0 bg-white p-2 rounded-xl overflow-hidden rotate-y-180 backface-hidden shadow-inner flex flex-col items-center">
-                        <div className="w-full h-[85%] overflow-hidden rounded-md bg-gray-100">
-                           <img src={card.src} alt="memory" className="w-full h-full object-cover" />
-                        </div>
-                        <div className="h-[15%] flex items-center justify-center">
-                           {card.matched ? <Heart className="w-4 h-4 text-rose-500 fill-rose-500 animate-pulse" /> : <div className="w-8 h-1 bg-gray-100 rounded-full"></div>}
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                ))}
-               </div>
-            </div>
-          </div>
-
-          {/* --- RIGHT SIDE: STATIONERY NOTE --- */}
-          <div className="w-full lg:w-1/3 flex flex-col justify-center min-h-[300px]">
-            
-            {!isWon ? (
-              <div className="relative bg-[#fffcf5] p-8 md:p-10 rounded-tr-[3rem] rounded-bl-[3rem] shadow-[8px_8px_0px_rgba(225,29,72,0.1)] border border-[#e6dbcf] rotate-1 hover:rotate-0 transition-transform duration-500">
-                 {/* Paper Texture Overlay */}
-                 <div className="absolute inset-0 opacity-[0.4] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] rounded-tr-[3rem] rounded-bl-[3rem] pointer-events-none"></div>
-                 
-                 <div className="relative z-10">
-                   <div className="flex justify-center mb-6">
-                     <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center border-2 border-rose-200">
-                        <Pin className="w-6 h-6 text-rose-500 fill-rose-500" />
-                     </div>
-                   </div>
-
-                   <h3 className="font-serif text-2xl text-[#5c4033] mb-4 font-bold text-center border-b-2 border-[#5c4033]/10 pb-4">
-                     A Little Challenge
-                   </h3>
-                   
-                   <p className="font-handwriting text-xl text-[#8b5a2b] leading-relaxed text-center mb-8">
-                     "Flip the cards to find the matching moments. These are the memories I cherish the most!" <br/>
-                     "Also take the screenshot and send me, Mujhe bhi to jaan-na hai ki kitne turn me aap jeeti hai Heehehe!!"
-                   </p>
-
-                   <div className="flex justify-between items-center bg-white/60 p-4 rounded-xl border border-[#8b5a2b]/10">
-                     <span className="text-xs font-bold text-rose-400 uppercase tracking-widest">Moves Taken</span>
-                     <span className="text-3xl font-serif text-rose-600 font-bold">{turns}</span>
-                   </div>
-                 </div>
-              </div>
-            ) : (
-              
-              // --- WIN STATE (Elegant Card) ---
-              <div className="relative bg-white p-8 md:p-10 rounded-[2rem] shadow-2xl border-4 border-rose-100 text-center overflow-hidden animate-zoom-in">
-                 <div className="absolute top-0 left-0 w-full h-3 bg-gradient-to-r from-rose-300 via-pink-400 to-rose-300"></div>
-                 
-                 <div className="mb-6 flex justify-center">
-                   <div className="p-4 bg-green-50 rounded-full animate-bounce">
-                     <Star className="w-12 h-12 text-green-500 fill-green-500" />
-                   </div>
-                 </div>
-
-                 <h3 className="text-3xl font-serif text-rose-900 font-bold mb-2">Wonderful! 🎉</h3>
-                 <p className="text-gray-600 mb-8 font-medium">You found all the memories perfectly!</p>
-
-                 <div className="bg-rose-50 p-6 rounded-2xl mb-8 border border-rose-100 rotate-[-2deg]">
-                   <p className="font-handwriting text-3xl text-rose-600 mb-2">{turns} Turns</p>
-                   <p className="text-[10px] text-rose-400 uppercase font-bold tracking-widest">📸 Screenshot this & send it to me!</p>
-                 </div>
-
-                 <button 
-                   onClick={shuffleCards} 
-                   className="w-full py-4 bg-rose-500 text-white rounded-xl font-bold shadow-lg hover:bg-rose-600 transition-all flex items-center justify-center gap-2 hover:shadow-rose-300/50"
-                 >
-                   <RefreshCw className="w-5 h-5" /> Play Again
-                 </button>
-              </div>
-            )}
-
-          </div>
-
-        </div>
-      </div>
-
-      <style>{`
-        .rotate-y-180 { transform: rotateY(180deg); }
-        .backface-hidden { backface-visibility: hidden; }
-        .perspective-1000 { perspective: 1000px; }
-        .transform-style-3d { transform-style: preserve-3d; }
-      `}</style>
-    </section>
-  );
-};
 
 const ScrollPage = ({ onNext }) => {
   return (
@@ -1534,7 +1428,7 @@ const ScrollPage = ({ onNext }) => {
       {/* 2. Hero Section: Transparent gradient allowing floating elements to show */}
       <section className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden bg-gradient-to-b from-rose-100/50 via-rose-50/20 to-transparent">
          {/* Vertical Ropes Added Here */}
-         <HeroVerticalRopes />
+         <HeroVerticalRopes/>
          
          <div className="absolute top-0 left-0 w-full h-[60vh] bg-gradient-to-b from-rose-200/50 to-transparent pointer-events-none z-0"></div>
          <div className="text-center mb-12 relative z-10 w-full max-w-4xl">
@@ -1549,23 +1443,13 @@ const ScrollPage = ({ onNext }) => {
          </div>
       </section>
 
-      {/* 2.5 New Celebration Page */}
-      {/* <section className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden bg-gradient-to-b from-rose-50 to-rose-100/50">
-         <div className="w-full max-w-4xl z-10 flex justify-center">
-            <CelebrationAnimation />
-         </div>
-      </section> */}
-
-      {/* 2.5 New Celebration Page */}
-
+      <CakeCeremony />
 
       {/* <--- PASTE THE COMPONENT HERE ---> */}
       <section className="relative z-10">
          <TimeTogether />
       </section>
 
-      <CakeCeremony />
-      
       
       {/* 3. Timeline: Semi-transparent backdrop */}
       <TimelineSection />
@@ -1648,6 +1532,14 @@ const ScrollPage = ({ onNext }) => {
       </section>
 
       <MemoryMatchGame/>
+
+      <CrackTheCode/>
+
+      <LoveSudoku/>
+
+      <RelationshipContract/>
+
+      <MoodClinic/>
 
       {/* --- NEW: NEXT PAGE BUTTON --- */}
       <section className="py-20 flex justify-center relative z-20">

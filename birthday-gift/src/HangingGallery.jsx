@@ -87,28 +87,66 @@ const APP_DATA = {
 
 const HangingGallery = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto z-10 relative h-[500px] overflow-hidden">
-       <div className="absolute top-10 left-0 right-0 h-1 bg-white/50 transform -rotate-1 rounded-full shadow-sm"></div>
-       <div className="absolute top-64 left-0 right-0 h-1 bg-white/50 transform rotate-1 rounded-full shadow-sm"></div>
-       <div className="flex justify-around absolute top-10 left-0 right-0">
-          {APP_DATA.carouselPhotos.slice(0, 4).map((photo, idx) => (
-             <div key={idx} className={`relative group origin-top animate-sway ${idx === 0 || idx === 3 ? 'hidden md:block' : ''}`} style={{ animationDelay: `${idx * 0.5}s` }}>
+    <div className="w-full max-w-6xl mx-auto z-10 relative min-h-[1400px] md:min-h-[600px] overflow-visible">
+       
+       {/* --- BACKGROUND WIRES --- */}
+       
+       {/* MOBILE WIRES (Visible only on small screens) - 4 Rows for 8 pics (2 per row) */}
+       <div className="md:hidden block">
+          {/* Wire 1 */}
+          <div className="absolute top-12 left-0 right-0 h-1 bg-white/50 transform -rotate-1 rounded-full shadow-sm"></div>
+          {/* Wire 2 */}
+          <div className="absolute top-[22rem] left-0 right-0 h-1 bg-white/50 transform rotate-1 rounded-full shadow-sm"></div>
+          {/* Wire 3 */}
+          <div className="absolute top-[42rem] left-0 right-0 h-1 bg-white/50 transform -rotate-1 rounded-full shadow-sm"></div>
+          {/* Wire 4 */}
+          <div className="absolute top-[62rem] left-0 right-0 h-1 bg-white/50 transform rotate-1 rounded-full shadow-sm"></div>
+       </div>
+
+       {/* LAPTOP WIRES (Visible only on medium+ screens) - 2 Rows for 8 pics (4 per row) */}
+       <div className="hidden md:block">
+          {/* Wire 1 */}
+          <div className="absolute top-12 left-0 right-0 h-1 bg-white/50 transform -rotate-1 rounded-full shadow-sm"></div>
+          {/* Wire 2 */}
+          <div className="absolute top-[24rem] left-0 right-0 h-1 bg-white/50 transform rotate-1 rounded-full shadow-sm"></div>
+       </div>
+
+
+       {/* --- PHOTOS GRID --- */}
+       {/* Mobile: grid-cols-2 (2 photos per row) -> With 8 photos, this creates 4 rows naturally.
+          Laptop: grid-cols-4 (4 photos per row) -> With 8 photos, this creates 2 rows naturally.
+          Gap: Added gap-y to space the rows out so they land on the wires below.
+       */}
+       <div className="grid grid-cols-2 md:grid-cols-4 w-full absolute top-10 px-2 gap-y-48 md:gap-y-36">
+          {APP_DATA.carouselPhotos.map((photo, idx) => (
+             <div 
+                key={idx} 
+                className="relative group origin-top animate-sway flex flex-col items-center" 
+                style={{ animationDelay: `${idx * 0.5}s` }}
+             >
+                {/* The String */}
                 <div className="w-0.5 h-16 bg-rose-900/40 mx-auto"></div>
+                
+                {/* The Clip */}
                 <div className="w-4 h-8 bg-amber-700 mx-auto -mt-2 rounded-sm shadow-sm relative z-10"></div>
-                <div className="bg-white p-2 shadow-lg -mt-2 transform rotate-2 group-hover:rotate-0 transition-transform duration-500 w-32 h-32 md:w-40 md:h-40"><img src={photo} className="w-full h-full object-cover" alt="hanging" /></div>
+                
+                {/* The Photo */}
+                <div className="bg-white p-2 shadow-lg -mt-2 transform rotate-2 group-hover:rotate-0 transition-transform duration-500 w-36 h-36 md:w-44 md:h-44">
+                    <img src={photo} className="w-full h-full object-cover" alt="hanging" />
+                </div>
              </div>
           ))}
        </div>
-       <div className="flex justify-around absolute top-64 left-10 right-10">
-          {APP_DATA.carouselPhotos.slice(4, 8).map((photo, idx) => (
-             <div key={idx} className={`relative group origin-top animate-sway ${idx === 0 || idx === 3 ? 'hidden md:block' : ''}`} style={{ animationDelay: `${(idx + 2) * 0.5}s` }}>
-                <div className="w-0.5 h-12 bg-rose-900/40 mx-auto"></div>
-                <div className="w-4 h-8 bg-amber-700 mx-auto -mt-2 rounded-sm shadow-sm relative z-10"></div>
-                <div className="bg-white p-2 shadow-lg -mt-2 transform -rotate-2 group-hover:rotate-0 transition-transform duration-500 w-32 h-32 md:w-40 md:h-40"><img src={photo} className="w-full h-full object-cover" alt="hanging" /></div>
-             </div>
-          ))}
-       </div>
-       <style>{` @keyframes sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } } .animate-sway { animation: sway 4s infinite ease-in-out; } `}</style>
+
+       <style>{` 
+        @keyframes sway { 
+            0%, 100% { transform: rotate(-3deg); } 
+            50% { transform: rotate(3deg); } 
+        } 
+        .animate-sway { 
+            animation: sway 4s infinite ease-in-out; 
+        } 
+       `}</style>
     </div>
   );
 };

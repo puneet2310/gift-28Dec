@@ -90,16 +90,16 @@ const APP_DATA = {
   ],
 
   reasonsList: [
-    "The way you laugh at my silly jokes.",
-    "Your morning coffee ritual is the cutest thing.",
-    "How you support my dreams no matter what.",
-    "Your kindness to strangers.",
-    "The sparkle in your eyes when you're happy.",
-    "Your warm hugs that fix everything.",
-    "How you make a house a home.",
-    "Your resilience in tough times.",
-    "The way you scrunch your nose when you think.",
-    "Just being absolutely, unapologetically YOU."
+    "Yy bhi koi baat hai puchne ki kyu special ho tm ?? Butt fir bhi bta hi deta hu mai...",
+    "Hr subh ki good morning aur good night sirf tmse hi... hr din ka same ritual... hehehhee",
+    "Tmhri itni care krna mere liye... ki mai khuch bolu ya na bolu to tmhe pata chl jata hai... uff babyyy meri jaan tu kitni special hai yrrr(❁´◡`❁)",
+    "Kisi bhi baat ko mnwana ho... yy to chutki ka khel hai aapke liye... heheheee",
+    "Aapke pyar krne ki adayein pyaari pyaari... thodu si baat se preshn ho jati ho... ",
+    "Kitne pyaare-pyaare gifts bnati deti ho... btao koi bnayega aise kisi ldke ke liye... are ghnata koi bnata hai... yy to aapki ekdm cuteness hai... hehehhee",
+    "Aur meri gltiyo ko maaf kr dena... haan mnana to pdta hi hai... lkin haan maaf to kr hi deti ho tm... hehehe baby meri cutieee",
+    "Aur wo pyaari si smile aapki... jisko dekhne ke liye tarsu mai... aur aap patt pattt photo de kr hmko khus kr deti hai...",
+    "Aur pta hai... jb aise apna muh bnati ho cute wala... ummm aisee muh bna kr... ekdm mst lgti ho babyyy",
+    "Bas being you... that's more than enough for me to fall in love with you every single day all over again."
   ],
 
   quiz: [
@@ -763,6 +763,7 @@ const CelebrationAnimation = () => {
 
 
 
+
 const PolaroidGallery = () => {
   return (
     <div className="w-full max-w-6xl mx-auto z-10 relative">
@@ -833,30 +834,49 @@ const ReasonsGenerator = () => {
   const [reason, setReason] = useState("Why do I love you? Let me count the ways...");
   const [animate, setAnimate] = useState(false);
   const [rotation, setRotation] = useState(0);
+  
+  // NEW: State to track which number we are on. Starts at 0 (the first item).
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const generateReason = () => {
     setAnimate(true);
     setRotation(Math.random() * 4 - 2); 
+
     setTimeout(() => {
-        const random = APP_DATA.reasonsList[Math.floor(Math.random() * APP_DATA.reasonsList.length)];
-        setReason(random);
+        // 1. Get the reason at the current index
+        const nextReason = APP_DATA.reasonsList[currentIndex];
+        
+        // 2. Set the reason
+        setReason(nextReason);
+        
+        // 3. Update the index for the NEXT click. 
+        // The % operator ensures that when we reach the end, it loops back to 0.
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % APP_DATA.reasonsList.length);
+        
         setAnimate(false);
     }, 400);
   };
+
   return (
     <section className="py-24 px-4 relative overflow-hidden">
        <div className="absolute inset-0 bg-transparent -z-10"></div>
        <div className="max-w-xl mx-auto relative z-10 text-center">
           <div className="inline-flex items-center gap-2 bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-sm font-bold mb-6 shadow-sm"><Sparkles className="w-4 h-4" /><span>Infinite Reasons</span></div>
+          
           <h2 className="text-4xl font-serif text-gray-800 mb-12">Why You Are Special</h2>
+          
           <div className="relative h-64 mb-10 group">
              <div className="absolute inset-0 bg-white rounded-2xl shadow-md transform rotate-3 scale-95 opacity-60 z-0"></div>
              <div className="absolute inset-0 bg-white rounded-2xl shadow-md transform -rotate-2 scale-98 opacity-80 z-10"></div>
              <div className="absolute inset-0 bg-white rounded-2xl shadow-xl flex items-center justify-center p-8 z-20 border border-rose-100 transition-all duration-500 ease-out" style={{ transform: `rotate(${rotation}deg)` }}>
                 <div className="absolute inset-0 pointer-events-none opacity-5 bg-[linear-gradient(#000000_1px,transparent_1px)] bg-[size:100%_2rem] mt-8"></div>
+                
                 <p className={`text-2xl md:text-3xl font-handwriting text-gray-700 leading-snug transition-all duration-500 ${animate ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>"{reason}"</p>
+                
                 <div className="absolute bottom-4 right-4 text-rose-300"><Heart className="w-6 h-6 fill-current opacity-50" /></div>
              </div>
           </div>
+          
           <button onClick={generateReason} className="group relative inline-flex items-center gap-3 bg-rose-500 hover:bg-rose-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-rose-300/50 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
             <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span><RefreshCw className={`w-5 h-5 ${animate ? 'animate-spin' : ''}`} /><span>Another Reason</span>
           </button>

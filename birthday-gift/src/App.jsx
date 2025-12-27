@@ -79,7 +79,7 @@ const APP_DATA = {
     // { img: stackp[7], text: "Happy Birthday, my love. Here's to a lifetime of making more memories just like these." },
   ],
   
-  proposalVideo: "/assets/proposal.mp4",
+  proposalVideo: "../rec.mp4",
 
   timeline: [
     { date: "August 14, 2021", title: "First Glance", desc: "The moment our eyes met at the coffee shop. I knew something was special." },
@@ -116,20 +116,20 @@ const APP_DATA = {
   ],
 
   voiceNotes: [
-    { id: 1, duration: "0:45", date: "10:00 AM", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
-    { id: 2, duration: "1:20", date: "10:05 AM", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
+    { id: 1, duration: "0:45", date: "10:00 AM", src: "1st.m4a" },
+    { id: 2, duration: "1:20", date: "10:05 AM", src: "W.m4a" },
     { id: 3, duration: "0:15", date: "10:10 AM", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
   ],
 
   customTextChat: [
-    "I haven't told you this enough lately, but I truly believe I am the luckiest man alive. Every moment with you is a treasure.",
-    "Just a reminder that you are the most beautiful, smart, and kind-hearted woman I know. Never forget how much I cherish you.",
-    "This website took a long time, but it's nothing compared to the lifetime I want to spend making you happy. I love you!",
+    "Happy birthday my dear love! Happpy birthday so so mucch my loveeee... Bhagwan aapki saari wishes puri kre meri jaan, meri cutiee piee ka aaj bday hai... heheheee meri jaan hai yy to... (❁´◡`❁) Aisi hi mukurati rho aage bdhti rho meri cutiee meri jaan... yy 4 saal ka safar aise hi krte krtee lifeitme ka safar bna rhe... My cutiee Happpy Birhtday ",
+    "My bestie ji... Btayiee aapko kaun sa kaise gift chahyie bubu... hehee ab chotu motu gift to mai bhi de hi skta hu... hehehhee. Aj ka din best din hai bcoz today is the birthday of my love... haayee meri raani, mera shona, mera kuchu puchu, love youuuu so mucch... Happpy Birthdayyy tooo youuu !!!",
+    "Apke pass aa kr bday mnane ka spna spna hi rhega... pta nhi kb aisa pyaaara sa mauka ayega ki acche se aapke saath me rh kr bday mna payee... aaaannnnn aise bday mnana hai... sb rhe butt mai bhi rhu ekdm mst bday celebrate krenge... haayee ekdm mje aayenge... cuteee day hoga wo sb to ekdm. ",
   ],
 
   imageMessages: [
-    PHOTOS[0], 
-    PHOTOS[4], 
+    '../1.jpg', 
+    '../2.jpg',  
   ],
 };
 

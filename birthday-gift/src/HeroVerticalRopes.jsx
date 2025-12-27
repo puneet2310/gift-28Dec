@@ -89,40 +89,80 @@ const APP_DATA = {
 
 const HeroVerticalRopes = () => {
   const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  // LOGIC CHANGE: Split all photos into two groups for mobile
+  // Evens go to Left Rope, Odds go to Right Rope
+  const allPhotos = APP_DATA.carouselPhotos;
+  const leftRopePhotos = allPhotos.filter((_, i) => i % 2 === 0);
+  const rightRopePhotos = allPhotos.filter((_, i) => i % 2 !== 0);
+
   const ropes = isMobile ? [
-      { x: '10%', photos: [APP_DATA.carouselPhotos[0], APP_DATA.carouselPhotos[2]], speed: '3s' },
-      { x: '90%', photos: [APP_DATA.carouselPhotos[1], APP_DATA.carouselPhotos[3]], speed: '4s' }
+      // Mobile: 2 Ropes containing ALL photos split evenly
+      { x: '10%', photos: leftRopePhotos, speed: '3s' },
+      { x: '90%', photos: rightRopePhotos, speed: '4s' }
   ] : [
-      { x: '2%', photos: [APP_DATA.carouselPhotos[0], APP_DATA.carouselPhotos[2]], speed: '3s' },
-      { x: '12%', photos: [APP_DATA.carouselPhotos[1]], speed: '4s' },
-      { x: '88%', photos: [APP_DATA.carouselPhotos[5]], speed: '3.5s' },
-      { x: '98%', photos: [APP_DATA.carouselPhotos[6], APP_DATA.carouselPhotos[7]], speed: '4.5s' },
+      // Desktop: Original logic (Subset of photos distributed across 4 ropes)
+      { x: '2%', photos: [allPhotos[0], allPhotos[2]], speed: '3s' },
+      { x: '12%', photos: [allPhotos[1]], speed: '4s' },
+      { x: '88%', photos: [allPhotos[5]], speed: '3.5s' },
+      { x: '98%', photos: [allPhotos[6], allPhotos[7]], speed: '4.5s' },
   ];
+
+  // Vertical spacing between photos
+  const photoGap = isMobile ? 120 : 180; // Tighter spacing on mobile to fit more pics
+
   return (
     <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
        {ropes.map((rope, i) => (
-         <div key={i} className="absolute top-0 h-[80vh] w-1 bg-amber-800/80 shadow-sm animate-swing-rope origin-top" style={{ left: rope.x, animationDuration: rope.speed }}>
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-amber-900"></div>
+         <div 
+            key={i} 
+            className="absolute top-0 w-1 bg-amber-800/80 shadow-sm animate-swing-rope origin-top" 
+            // Changed height to 120vh to ensure rope is long enough for all photos
+            style={{ left: rope.x, animationDuration: rope.speed, height: '120vh' }}
+         >
+            {/* The Nail/Hook at the top */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-8 rounded-full bg-amber-900"></div>
+            
             {rope.photos.map((photo, j) => (
-               <div key={j} className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center" style={{ top: `${80 + j * 180}px` }}>
-                  <div className="w-3 h-8 bg-amber-600 rounded-sm mb-[-10px] z-20 shadow-md border-r border-amber-900 relative"></div>
-                  <div className={`relative p-1 bg-white shadow-xl transition-all duration-500 ${(i + j) % 2 === 0 ? 'rotate-3' : '-rotate-3'}`} style={{ width: isMobile ? '70px' : '100px' }}>
-                     <div className="aspect-[3/4] overflow-hidden bg-gray-100 mb-1 border border-gray-100"><img src={photo} alt="Mem" className="w-full h-full object-cover" /></div>
+               <div 
+                 key={j} 
+                 className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center" 
+                 style={{ top: `${80 + j * photoGap}px` }} // Dynamic spacing
+               >
+                  {/* The Clip */}
+                  <div className="w-1 h-8 bg-amber-600 rounded-sm mb-[-10px] z-20 shadow-md border-r border-amber-900 relative"></div>
+                  
+                  {/* The Photo Frame */}
+                  <div 
+                    className={`relative p-1  bg-white shadow-xl transition-all duration-500 ${(i + j) % 2 === 0 ? 'rotate-3' : '-rotate-3'}`} 
+                    style={{ width: isMobile ? '70px' : '100px' }}
+                  >
+                     <div className="aspect-[3/4] overflow-hidden bg-gray-100 mb-1 border border-gray-100">
+                        <img src={photo} alt="Mem" className="w-full h-full object-cover" />
+                     </div>
                   </div>
                </div>
             ))}
          </div>
        ))}
-       <style>{` @keyframes swingRope { 0%, 100% { transform: rotate(1deg); } 50% { transform: rotate(-1deg); } } .animate-swing-rope { animation: swingRope infinite ease-in-out; } `}</style>
+       <style>{` 
+         @keyframes swingRope { 
+           0%, 100% { transform: rotate(1deg); } 
+           50% { transform: rotate(-1deg); } 
+         } 
+         .animate-swing-rope { 
+           animation: swingRope infinite ease-in-out; 
+         } 
+       `}</style>
     </div>
   );
 };
-
 
 export default HeroVerticalRopes;

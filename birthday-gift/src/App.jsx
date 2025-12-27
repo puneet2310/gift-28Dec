@@ -103,8 +103,8 @@ const APP_DATA = {
   ],
 
   quiz: [
-    { question: "Where did we first meet?", options: ["The Library", "Central Coffee Shop", "At a Party", "Online"], correctAnswer: 1 },
-    { question: "What is my favorite nickname for you?", options: ["Honey", "Princess", "Babu", "Sunshine"], correctAnswer: 2 },
+    { question: "Where did we first meet?", options: ["The Library", "School", "At a Party", "Online"], correctAnswer: 1 },
+    { question: "What is my favorite nickname for you?", options: ["Chinti", "Palkuu", "Babu", "Shona"], correctAnswer: 1 },
     { question: "How much do I love you?", options: ["A lot", "To the moon", "Infinity & Beyond", "More than pizza"], correctAnswer: 2 }
   ],
 
@@ -790,11 +790,14 @@ const PolaroidGallery = () => {
 
 
 // --- STACK GALLERY WITH DYNAMIC TEXT ---
+
 const StackGallery = () => {
   const [topIndex, setTopIndex] = useState(0);
   const total = APP_DATA.stackMemories.length; 
   const [displayedText, setDisplayedText] = useState('');
+
   const handleNext = () => { setTopIndex((prev) => (prev + 1) % total); };
+
   useEffect(() => {
      setDisplayedText('');
      const fullText = APP_DATA.stackMemories[topIndex].text;
@@ -807,23 +810,41 @@ const StackGallery = () => {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center min-h-[500px] relative gap-12 px-4">
+       
+       {/* PHOTO STACK SECTION */}
        <div className="relative w-72 h-96 cursor-pointer flex-shrink-0" onClick={handleNext}>
           {APP_DATA.stackMemories.map((memory, idx) => {
              const diff = (idx - topIndex + total) % total; 
              if (diff > 3) return null; 
              return (
                <div key={idx} className={`absolute inset-0 bg-white p-3 shadow-2xl rounded-xl border border-gray-200 transition-all duration-700 ease-in-out transform ${diff === 0 ? 'z-30 scale-100 rotate-0 hover:rotate-2' : ''} ${diff === 1 ? 'z-20 scale-95 translate-y-4 rotate-3 opacity-90' : ''} ${diff === 2 ? 'z-10 scale-90 translate-y-8 -rotate-2 opacity-80' : ''} ${diff === 3 ? 'z-0 scale-85 translate-y-12 rotate-1 opacity-0' : ''} `}>
-                 <img src={memory.img} className="w-full h-full object-cover rounded-lg pointer-events-none" alt="stack" />
-                 {diff === 0 && <div className="absolute bottom-4 right-4 bg-rose-500 text-white text-xs px-2 py-1 rounded-full animate-bounce">Tap Me!</div>}
+                  <img src={memory.img} className="w-full h-full object-cover rounded-lg pointer-events-none" alt="stack" />
+                  {diff === 0 && <div className="absolute bottom-4 right-4 bg-rose-500 text-white text-xs px-2 py-1 rounded-full animate-bounce">Tap Me!</div>}
                </div>
              )
           })}
        </div>
-       <div className="w-full md:w-1/2 h-48 md:h-64 bg-white/40 backdrop-blur-md rounded-2xl p-8 shadow-[0_0_30px_rgba(244,63,94,0.1)] border border-white/40 flex items-center justify-center relative overflow-hidden group">
-          <div className="absolute -top-10 -left-10 w-24 h-24 border-t-4 border-l-4 border-yellow-400 rounded-tl-xl opacity-80"></div>
-          <div className="absolute -bottom-10 -right-10 w-24 h-24 border-b-4 border-r-4 border-yellow-400 rounded-br-xl opacity-80"></div>
+
+       {/* TEXT SECTION */}
+       {/* Changes made:
+           1. Removed fixed 'h-48' and replaced with 'min-h-[200px] h-auto'.
+           2. Changed 'overflow-hidden' to 'overflow-visible' so text isn't cut off.
+           3. Added 'flex-col' to center text properly.
+       */}
+       <div className="w-full md:w-1/2 min-h-[200px] md:h-64 h-auto bg-white/40 backdrop-blur-md rounded-2xl p-8 shadow-[0_0_30px_rgba(244,63,94,0.1)] border border-white/40 flex flex-col items-center justify-center relative overflow-visible group">
+          
+          <div className="absolute -top-10 -left-10 w-24 h-24 border-t-4 border-l-4  rounded-tl-xl opacity-80"></div>
+          <div className="absolute -bottom-10 -right-10 w-24 h-24 border-b-4 border-r-4  rounded-br-xl opacity-80"></div>
           <div className="absolute top-4 right-4 text-rose-400 opacity-80"><Quote className="w-12 h-12" /></div>
-          <p className="font-handwriting text-2xl md:text-3xl text-rose-900 leading-relaxed text-center drop-shadow-sm">"{displayedText}"<span className="animate-pulse text-yellow-400">|</span></p>
+          
+          {/* Changes made to Text:
+             1. Changed 'text-2xl' to 'text-xl md:text-3xl'. 
+                (Smaller text on mobile fits more content).
+          */}
+          <p className="font-handwriting text-xl md:text-3xl text-rose-900 leading-relaxed text-center drop-shadow-sm">
+            "{displayedText}"
+            <span className="animate-pulse text-yellow-400">|</span>
+          </p>
        </div>
     </div>
   );

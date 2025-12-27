@@ -117,7 +117,7 @@ const HangingGallery = () => {
           Laptop: grid-cols-4 (4 photos per row) -> With 8 photos, this creates 2 rows naturally.
           Gap: Added gap-y to space the rows out so they land on the wires below.
        */}
-       <div className="grid grid-cols-2 md:grid-cols-4 w-full absolute top-10 px-2 gap-y-48 md:gap-y-36">
+       <div className="grid grid-cols-2 md:grid-cols-4 w-full absolute top-10 px-2 gap-y-18 md:gap-y-18">
           {APP_DATA.carouselPhotos.map((photo, idx) => (
              <div 
                 key={idx} 
@@ -131,8 +131,8 @@ const HangingGallery = () => {
                 <div className="w-4 h-8 bg-amber-700 mx-auto -mt-2 rounded-sm shadow-sm relative z-10"></div>
                 
                 {/* The Photo */}
-                <div className="bg-white p-2 shadow-lg -mt-2 transform rotate-2 group-hover:rotate-0 transition-transform duration-500 w-36 h-36 md:w-44 md:h-44">
-                    <img src={photo} className="w-full h-full object-cover" alt="hanging" />
+                <div className="bg-white p-2 shadow-lg -mt-2 transform rotate-2 group-hover:rotate-0 transition-transform duration-500 w-36 h-46 md:w-44 md:h-64">
+                    <img src={photo} className="w-full h-full object-cover" alt="loading" />
                 </div>
              </div>
           ))}

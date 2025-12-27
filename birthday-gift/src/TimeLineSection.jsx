@@ -37,11 +37,11 @@ const APP_DATA = {
   proposalVideo: "/assets/proposal.mp4",
 
   timeline: [
-    { date: "August 14, 2021", title: "First Glance", desc: "The moment our eyes met at the coffee shop. I knew something was special." },
-    { date: "September 1, 2021", title: "First Date", desc: "Pizza, bad jokes, and the best night ever. You laughed at everything." },
-    { date: "December 25, 2021", title: "First Trip", desc: "Getting lost in the mountains together and loving every second." },
+    { date: "August 02, 2021", title: "Our Journey Starts", desc: "Wo din kitna acha hoga jb hm mile the... aur aaj journey yha tk aa gyi... is beautiful si journey ki suruat hui." },
+    { date: "September 1, 2021", title: "First Hug", desc: "Dono ko nhi pta tha ki hm hug krenge ki nhi... lkin bs apne aap aise haath rkhne ek baad bs ek dusre se ekdm close aa gye... Haayee wo feel " },
+    { date: "December 25, 2021", title: "First Kiss", desc: "Yaad hai wo seedhi pr baithna and wo baith kr ek dusre ke bgl half-half toffee ek dusre ko khila diyee... (ab kaise khilaye wo to yaad hi hoga... heheheee)" },
     { date: "February 14, 2022", title: "I Love You", desc: "Said it under the stars. The universe stood still." },
-    { date: "Today", title: "Happy Birthday", desc: "Celebrating the most amazing woman in the world. My everything." },
+    { date: "Today", title: "Happy Birthday", desc: "Kitna cute cute din hai aaj... meri cutie ka bday hai aaj... Happpyy Birthdayyy Babyyy !!" },
   ],
 
   reasonsList: [
@@ -58,8 +58,8 @@ const APP_DATA = {
   ],
 
   quiz: [
-    { question: "Where did we first meet?", options: ["The Library", "Central Coffee Shop", "At a Party", "Online"], correctAnswer: 1 },
-    { question: "What is my favorite nickname for you?", options: ["Honey", "Princess", "Babu", "Sunshine"], correctAnswer: 2 },
+    { question: "Where did we first meet?", options: ["The Library", "School", "At a Party", "Online"], correctAnswer: 1 },
+    { question: "What is my favorite nickname for you?", options: ["Chinti", "Palkuu", "Babu", "Shona"], correctAnswer: 1 },
     { question: "How much do I love you?", options: ["A lot", "To the moon", "Infinity & Beyond", "More than pizza"], correctAnswer: 2 }
   ],
 

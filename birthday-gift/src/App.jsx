@@ -79,7 +79,8 @@ const APP_DATA = {
     // { img: stackp[7], text: "Happy Birthday, my love. Here's to a lifetime of making more memories just like these." },
   ],
   
-  proposalVideo: "../rec.mp4",
+  proposalVideo1: "../rec.mp4",
+  proposalVideo2: "../rec2.mp4",
 
   timeline: [
     { date: "August 14, 2021", title: "First Glance", desc: "The moment our eyes met at the coffee shop. I knew something was special." },
@@ -109,16 +110,16 @@ const APP_DATA = {
   ],
 
   messages: [
-    { id: 1, title: "To My Best Friend", text: "Thank you for being the most amazing partner anyone could ask for. You make every day brighter just by being in it." },
+    { id: 1, title: "To My Best Friend", text: "Thank you for being the most amazing partner anyone could ask for. Tmhri presence hi mere liye sb khuch hai... jha tm ho bs wo mere liye sbse best place hai. Hmesa mere saath rhi ho meko hmesa shi rste pr chlati hai.. koi glti hai to daat lgati hai... ekdm best best best friend you are... Hehehehe" },
     { id: 2, title: "My Strength", text: "Your smile is the only thing I need to get through a bad day. You are my rock, my safe place, and my greatest adventure." },
-    { id: 3, title: "The Little Things", text: "I love how you wrinkle your nose when you laugh, how you sing in the car, and how you make even the simplest moments feel magical." },
+    { id: 3, title: "The Little Things", text: "Teri chhoti chhoti cute cute si hrkate hi ekdm mujhe daily aur pyar me kuda deta hai... wo natkhat hrkate... chidhana preshn krna fir pyr krna... hehehhee yy sb ekdm mt pucho babyyyy... Ummaaa lovee youuu babyyy" },
     { id: 4, title: "Our Future", text: "I can't wait to grow old with you, creating a million more memories along the way. Happy Birthday, my love!" },
   ],
 
   voiceNotes: [
     { id: 1, duration: "0:45", date: "10:00 AM", src: "1st.m4a" },
     { id: 2, duration: "1:20", date: "10:05 AM", src: "W.m4a" },
-    { id: 3, duration: "0:15", date: "10:10 AM", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
+    { id: 3, duration: "0:15", date: "10:10 AM", src: "3.m4a" },
   ],
 
   customTextChat: [
@@ -1553,18 +1554,36 @@ const ScrollPage = ({ onNext }) => {
 
 
       {/* 5. Proposal */}
-      <section className="min-h-screen flex flex-col items-center justify-center p-6  relative text-rose-900 z-10 backdrop-blur-sm">
-         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
-         <SectionFloatingElements />
-         <div className="max-w-4xl w-full z-10 text-center">
-            <Heart className="w-16 h-16 text-rose-500 fill-current mx-auto mb-6 animate-pulse" />
-            <h2 className="text-3xl md:text-5xl font-serif mb-12">One Special Question...</h2>
+      <section className="min-h-screen flex flex-col items-center justify-center p-6 relative text-rose-900 z-10 backdrop-blur-sm">
+    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+    <SectionFloatingElements />
+    
+    {/* Changed max-w-4xl to max-w-6xl to give side-by-side videos more room */}
+    <div className="max-w-6xl w-full z-10 text-center">
+        <Heart className="w-16 h-16 text-rose-500 fill-current mx-auto mb-6 animate-pulse" />
+        <h2 className="text-3xl md:text-5xl font-serif mb-12">One Special Question...</h2>
+        
+        {/* --- LAYOUT WRAPPER START --- */}
+        {/* grid-cols-1: Stacked on mobile */}
+        {/* md:grid-cols-2: Side-by-side on laptop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full">
+            
+            {/* Video 1 */}
             <div className="border-4 border-rose-500/30 rounded-3xl p-2 bg-rose-200/40 backdrop-blur-md">
-               <VideoFrame src={APP_DATA.proposalVideo} icon={Heart} placeholderText="The Proposal" />
+                <VideoFrame src={APP_DATA.proposalVideo1} icon={Heart} placeholderText="The Proposal" />
             </div>
-            <p className="mt-8 text-xl font-light italic text-rose-900">"I want to spend every birthday with you."</p>
-         </div>
-      </section>
+
+            {/* Video 2 */}
+            <div className="border-4 border-rose-500/30 rounded-3xl p-2 bg-rose-200/40 backdrop-blur-md">
+                <VideoFrame src={APP_DATA.proposalVideo2} icon={Heart} placeholderText="The Proposal" />
+            </div>
+
+        </div>
+        {/* --- LAYOUT WRAPPER END --- */}
+
+        <p className="mt-8 text-xl font-light italic text-rose-900">"I want to spend every birthday with you."</p>
+    </div>
+</section>
       
       <ReasonsGenerator />
       
@@ -1624,17 +1643,7 @@ const ScrollPage = ({ onNext }) => {
 
       <MoodClinic/>
 
-      {/* --- NEW: NEXT PAGE BUTTON --- */}
-      <section className="py-20 flex justify-center relative z-20">
-         <button 
-           onClick={onNext}
-           className="group relative px-10 py-5 bg-white text-rose-600 font-serif text-2xl font-bold rounded-full shadow-[0_0_30px_rgba(225,29,72,0.4)] border-4 border-rose-100 hover:scale-110 hover:shadow-[0_0_50px_rgba(225,29,72,0.6)] transition-all duration-300 flex items-center gap-3 overflow-hidden"
-         >
-           <span className="relative z-10">Go to Final Surprise</span>
-           <ArrowLeft className="w-6 h-6 rotate-180 relative z-10" /> {/* Using ArrowLeft rotated 180 because ArrowRight might not be imported, or import ArrowRight */}
-           <div className="absolute inset-0 bg-rose-50 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
-         </button>
-      </section>
+      
 
       <footer className="bg-white/80 backdrop-blur-md py-8 text-center text-rose-400 text-sm relative z-10">Made with infinite love</footer>
     </div>

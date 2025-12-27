@@ -38,8 +38,8 @@ const APP_DATA = {
 
   timeline: [
     { date: "August 02, 2021", title: "Our Journey Starts", desc: "Wo din kitna acha hoga jb hm mile the... aur aaj journey yha tk aa gyi... is beautiful si journey ki suruat hui." },
-    { date: "February 05, 2022", title: "First Hug", desc: "Dono ko nhi pta tha ki hm hug krenge ki nhi... lkin bs apne aap aise haath rkhne ek baad bs ek dusre se ekdm close aa gye... Haayee wo feel " },
-    { date: "March 16, 2022", title: "First Pucchi", desc: "Yaad hai wo seedhi pr baithna and wo baith kr ek dusre ke bgl half-half toffee ek dusre ko khila diyee... (ab kaise khilaye wo to yaad hi hoga... heheheee)" },
+    { date: "February 05, 2022", title: "First Ride & Hug", desc: "Haayee wo bike pr saath me chlna... kafi mst sa sukoon ha usme aur dono ko nhi pta tha ki hm hug krenge ki nhi... lkin bs apne aap aise haath rkhne ek baad bs ek dusre se ekdm close aa gye... Haayee wo feel " },
+    { date: "March 16, 2022", title: "First Pucchi", desc: "Heehehe in sb ki feel to sbse alg hai yrrr... ek alg hi feel hota hai ekdm aise pyaar se gaal nochu yy kru... hehhhheeeee hehehee ab to yy normal moment bn chuka hai, aj bhi usse mn nhi bhrta... kheee khee kheee" },
     { date: "September 25, 2022", title: "First Kiss", desc: "Yaad hai wo seedhi pr baithna and wo baith kr ek dusre ke bgl half-half toffee ek dusre ko khila diyee... (ab kaise khilaye wo to yaad hi hoga... heheheee)" },
     { date: "Today", title: "Happy Birthday", desc: "Kitna cute cute din hai aaj... meri cutie ka bday hai aaj... Happpyy Birthdayyy Babyyy !!" },
   ],

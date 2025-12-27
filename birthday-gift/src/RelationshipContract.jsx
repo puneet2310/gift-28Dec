@@ -84,7 +84,7 @@ const RelationshipContract = () => {
               <span className="font-bold text-rose-600 text-xl border-b-2 border-rose-200 px-2">Bubu</span>.
             </p>
             <p className="italic text-gray-500 text-base">
-              "By signing this, the Wife agrees to tolerate the Husband's bad jokes and late-night gaming for another year."
+              "By signing this, the Wife agrees to tolerate the Husband's bad jokes and late-night gaming for lifetime."
             </p>
           </div>
 
@@ -101,7 +101,7 @@ const RelationshipContract = () => {
               </div>
               <div>
                 <h4 className="font-bold text-rose-900">1. The "Aur Batao" Treaty</h4>
-                <p className="text-sm text-gray-600">I promise not to get annoyed when you say "Aur batao?" for the 100th time.</p>
+                <p className="text-sm text-gray-600">Mai promise krta hu ki jb jb aap "Aur-Batao" bolengi mai hmesa aap ka jwb dunga bina chidchidaye hue.</p>
               </div>
             </div>
 
@@ -115,7 +115,7 @@ const RelationshipContract = () => {
               </div>
               <div>
                 <h4 className="font-bold text-rose-900">2. The Screenshot Immunity</h4>
-                <p className="text-sm text-gray-600">I allow you to take ugly screenshots of my frozen video call face (but never post them!).</p>
+                <p className="text-sm text-gray-600">Mai aapko apne video call face ke badsurat screenshots lene ki ijazat deta hu (lekin kabhi post mat karna! Plazzzz).</p>
               </div>
             </div>
 
@@ -128,8 +128,8 @@ const RelationshipContract = () => {
                 {checks.c3 && <Check className="w-3 h-3 text-white" />}
               </div>
               <div>
-                <h4 className="font-bold text-rose-900">3. The Food Sharing Act</h4>
-                <p className="text-sm text-gray-600">I admit that "I am not hungry" is a lie, and I will steal your food when we meet.</p>
+                <h4 className="font-bold text-rose-900">3. The "Always Have Right to Irritate You"</h4>
+                <p className="text-sm text-gray-600">Mujhe hmesa aapko pyaar ke saath hi aapko chidchidwane ka mauka milna chahyieee... Heheheheee Bolo bolo.</p>
               </div>
             </div>
 
@@ -143,7 +143,7 @@ const RelationshipContract = () => {
               </div>
               <div>
                 <h4 className="font-bold text-rose-900">4. The Forever Promise</h4>
-                <p className="text-sm text-gray-600">I promise to love you despite the distance, the lag, and the time difference.</p>
+                <p className="text-sm text-gray-600">Mai wada karta hu ki doori, lag, aur time difference ke bawajood aap se pyaar karta rahunga. Aur aapko bhi hmesa saath dena pdega mera !!</p>
               </div>
             </div>
 
@@ -152,7 +152,7 @@ const RelationshipContract = () => {
           {/* SIGNATURE AREA */}
           <div className="bg-rose-50/50 p-6 rounded-2xl border-2 border-dashed border-rose-200 relative z-10">
             <p className="font-serif text-rose-800 font-bold mb-4 flex items-center gap-2">
-              <PenTool className="w-5 h-5" /> Sign Here to Validate:
+              <PenTool className="w-5 h-5" /> Sign Here to being by lifetime partner ❤️:
             </p>
             
             <div className="flex flex-col md:flex-row gap-4">

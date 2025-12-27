@@ -11,7 +11,7 @@ const CrackTheCode = () => {
   const [attempts, setAttempts] = useState(0);
 
   // 🔒 SECRET CODE (Change this!)
-  const SECRET_CODE = "1408"; 
+  const SECRET_CODE = "1228"; 
 
   const handleInput = (num) => {
     if (isWon) return;

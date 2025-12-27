@@ -1605,17 +1605,17 @@ const ScrollPage = ({ onNext }) => {
          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:h-auto">
             
             {/* Column 1: Long Custom Text Chat (Left) */}
-            <InstaCard title="Her Diary ❤️" icon={<MessageCircle className="w-6 h-6 text-rose-500" />}>
+            <InstaCard title="Bestie ❤️" icon={<MessageCircle className="w-6 h-6 text-rose-500" />}>
                <CustomTextChat messages={APP_DATA.customTextChat} />
             </InstaCard>
 
             {/* Column 2: Voice Notes (Center) */}
-            <InstaCard title="Voice Notes 🎤" icon={<Mic className="w-6 h-6 text-rose-500" />}>
+            <InstaCard title="Chintu 🎤" icon={<Mic className="w-6 h-6 text-rose-500" />}>
                <VoiceNoteList notes={APP_DATA.voiceNotes} />
             </InstaCard>
             
             {/* Column 3: Image Messages (Right) */}
-            <InstaCard title="Photo Drops 📸" icon={<Image className="w-6 h-6 text-rose-500" />}>
+            <InstaCard title="Hubby ❤️" icon={<Image className="w-6 h-6 text-rose-500" />}>
                <ImageMessagesList images={APP_DATA.imageMessages} />
             </InstaCard>
 

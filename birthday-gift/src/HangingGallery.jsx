@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 const PHOTOS = [
-  "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=300&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=300&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?q=80&w=300&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=300&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=300&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=300&h=400&fit=crop",
+  "../hanging/13.jpg",
+  "../hanging/3.jpg",
+  "../hanging/12.jpg",
+  "../hanging/1.jpg",
+  "../hanging/4.jpg",
+  "../hanging/9.jpg",
+  "../hanging/7.jpg",
+  "../hanging/8.jpg",
 ];
 
 const APP_DATA = {

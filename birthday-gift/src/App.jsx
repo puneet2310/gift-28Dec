@@ -52,31 +52,29 @@ const APP_DATA = {
   carouselPhotos: PHOTOS,
 
   stackMemories: [
-    { img: stackp[0], text: " Haayee yy smile... Yhi to hai jo hr pal ekdm hmko khus kr deta hai kwl aapki smile soch kr... Hehehehe" },
-    { img: stackp[1], text: " You know what ??... Apki aisi cute cute photo dekh kr ekdm mja aa jati hai... kyu kyu gussa aa rha ky... abhi to ek aur hai aage dikhega... ekdm mst wali... Gussana mt babuuuuuu..." },
-    { img: stackp[2], text: " Yy sb pic jb hm milte the ekdm starting starting me... hehehheee... Haayeee alllah(❁´◡`❁)" },
-    { img: stackp[3], text: " Yy t-shirt sch me kitna acha lgta hai meko... aur aisee bus me saath me aana... Kitna pyaara sa pal hota hai jb bus me saath aate hai... Ufff" },
-    { img: stackp[4], text: " Aisi selfiee... jisme aap ho ekdm cute si smile ho... aur bs aap ho... hme to khuch nhi chahyie bs aapki smile miljaye ek cute si, aur ek pyaari si nazar se aap jo dekhti hai,,, mai to usi me flat ho jata hu... hehehee " },
-    { img: stackp[5], text: " Ab yy to ekdm ky khu ji... hot si ekdm, jo mere pass hai hehehheee... I am so special baby for you... Hai na ?" },
-    { img: stackp[6], text: " Haayee bindi aur yy normal si bina filter ki pic... meko to ekdm gira deti hai sch me... haayeee alllah meri jaan tu kitni cute hai yrr sch me mn krta hai ekmd laptop me se niklu aur ekdm ghus jau andr tmhre me..." },
-    { img: stackp[7], text: " Yy mulakat... jo aapse is mohabbat ke daur me hui hai... mn krta hai is daur ko yhi rok ke bs usi me rh jayee... na mn kre aapse dur jane ka, na mn kree khuch aur krne... bs aap aa jao saath me... zindagi ka safar yu hi suhana ho jaye." },
-    { img: stackp[8], text: " Hahahaa... ab acchi acchi photo dekh li khuch pglu pglu bhi dekho cute cute... dekho kitni sundr lg rhi ho... mn krta hai ekdm gaal nochu tmhra baith kr hehehhee... ekdm pkd kr nochne lgu" },
-    { img: stackp[9], text: " Haayeeee... yy aisee cute sa jb face bnati ho... aise narazgi wala chehra... hayeee allah... mn kre ekdm aa krr pucchiii le luu dher sara ekdm preshn kr du fir ek pyaari si smile niklwa du andr se aapke... Hehehee(❁´◡`❁)" },
-    { img: stackp[10], text: " Some video call moments... wo cute cute moments screenshot me capture krne ki aadat... kitna mst lgta hai aapki aisi cute cute photos apne gallery me rkh lu aur bs ek din 100% storage tmhre photo se bhr jao." },
-    { img: stackp[11], text: " To ky jrurt hai ab is photo ko explain krne ki ??? Hm to khuch kh hi nhi skte is photo ke baare me yrr... Is photo pr mai yy kh skta hu ki btao ky chahyie tmko... hehehheee" },
-    { img: stackp[12], text: " Aisa lg rha meri dulhan hai mere saamne... lg rha ki shaadi ke baad tm mayke gyi ho aur vc ho rha... hehehheeee" },
-    { img: stackp[13], text: " Kahe muh bnayi ho hmar jaan ho... Na na maaro na hmko... hm bure nhi hai bs aise higlti se mera phone ss le leta hai... Mai thode na liya hu, mera phone liya hai mere se bina ouche aur fir mujhe dikha diya, meri glti thode na hai, isilye no gussa" },
-    { img: stackp[14], text: " Haayeee yrrr... kitna pyaar a rha ekdm... aisa feel ho rha na ki jaise heart me se koi chemical release ho rha ekdm dhk dhk ho rha hai... ekdm bs mn kr rha hai aa kr baith jau tmhre pass... ufff hehehehhehe" },
-    { img: stackp[15], text: " Yy mulakat kitna pyaara tha...  mere liye kitna pyaara pyaara gift diya gya tha, mai to utna acha nhi bna paya hu... aise hardcopy me nhi de paya tereko... solly baby" },
-    { img: stackp[16], text: " Heelooo my dear panda... my winter panda cutiee baby... sch me apki simle na... ho hi nhi skti aapki smile se achi kisi aur ki smile... uff babyyy you arre the Miss Universe babyy !!" },
-    { img: stackp[17], text: " Bs dekhta rhu is tasweer ko... aur muskurata rhu dekh dekh kr bs aapko... hehehheee babyyy... !! Happpy Birthday !!!" },
-    { img: stackp[18], text: " Yy wala suit meko bhut acha lgta hai... mn rta hai is suit me aapko saamne se dekhu aur fir ekdm yaar se gle lga lu yrrrr.... aaaaaannn babyyy i love youuuu.... bula loo mujhe apne pass babyyy" },
-    { img: stackp[19], text: " Yy need se uth kr video call... hehehee ky hi to mst lgta hai.. aise niharat rhu bs aapko ji... hehehhehe i lovee you baby" },
-    { img: stackp[20], text: " Ooo meri do chhoti wali babyy... my small babyyy hehehhee... tu to hr look me mujhe psnd hai yrrr... hayeee rabba... love you baby... you are my cute cute jaan... my cutiee sweetieeee" },
-    { img: stackp[21], text: " Haayee geele bikhre baal... hehehee mai to sch me aise words me hr cheez explain hi na kr pau.... Bs bhutt saaraa love you love youuuu" },
-    { img: stackp[22], text: " Happy Birthday, my love. Apki saari wishess aise  hi puri hoti rhe... aur aage bdhti rho meri jaan !!" },
-    // { img: stackp[23], text: "Happy Birthday, my love. Here's to a lifetime of making more memories just like these." },
-    // { img: stackp[7], text: "Happy Birthday, my love. Here's to a lifetime of making more memories just like these." },
+    { img: stackp[0], text: " Haayee yy smile... 😍✨ Yhi to hai jo hr pal ekdm hmko khus kr deta hai kwl aapki smile soch kr... Hehehehe 😁💖" },
+    { img: stackp[1], text: " You know what ??... 🤔 Apki aisi cute cute photo dekh kr ekdm mja aa jati hai... 😂📸 kyu kyu gussa aa rha ky... 🤨 abhi to ek aur hai aage dikhega... ekdm mst wali... Gussana mt babuuuuuu... 🤫💋" },
+    { img: stackp[2], text: " Yy sb pic jb hm milte the ekdm starting starting me... 🕰️💑 hehehheee... Haayeee alllah(❁´◡`❁) 🙈💘" },
+    { img: stackp[3], text: " Yy t-shirt sch me kitna acha lgta hai meko... 👕💖 aur aisee bus me saath me aana... 🚌👫 Kitna pyaara sa pal hota hai jb bus me saath aate hai... Ufff 😮‍💨💞" },
+    { img: stackp[4], text: " Aisi selfiee... 🤳✨ jisme aap ho ekdm cute si smile ho... aur bs aap ho... hme to khuch nhi chahyie bs aapki smile miljaye ek cute si, aur ek pyaari si nazar se aap jo dekhti hai,,, 👁️💋 mai to usi me flat ho jata hu... hehehee 🫠❤️" },
+    { img: stackp[5], text: " Ab yy to ekdm ky khu ji... hot si ekdm, jo mere pass hai hehehheee... 🔥🥵 I am so special baby for you... Hai na ? 😉😎" },
+    { img: stackp[6], text: " Haayee bindi aur yy normal si bina filter ki pic... 🔴✨ meko to ekdm gira deti hai sch me... haayeee alllah meri jaan tu kitni cute hai yrr 🥺🤏 sch me mn krta hai ekmd laptop me se niklu aur ekdm ghus jau andr tmhre me... 💻🏃‍♂️💨🫂" },
+    { img: stackp[7], text: " Yy mulakat... 🤝❤️ jo aapse is mohabbat ke daur me hui hai... mn krta hai is daur ko yhi rok ke bs usi me rh jayee... ⏳🛑 na mn kre aapse dur jane ka, na mn kree khuch aur krne... bs aap aa jao saath me... zindagi ka safar yu hi suhana ho jaye. 🛣️💑✨" },
+    { img: stackp[8], text: " Hahahaa... 🤣🤪 ab acchi acchi photo dekh li khuch pglu pglu bhi dekho cute cute... dekho kitni sundr lg rhi ho... mn krta hai ekdm gaal nochu tmhra baith kr hehehhee... 🤏😚 ekdm pkd kr nochne lgu 😈💞" },
+    { img: stackp[9], text: " Haayeeee... yy aisee cute sa jb face bnati ho... 😠😚 aise narazgi wala chehra... hayeee allah... mn kre ekdm aa krr pucchiii le luu dher sara ekdm preshn kr du fir ek pyaari si smile niklwa du andr se aapke... Hehehee(❁´◡`❁) 💋😘" },
+    { img: stackp[10], text: " Some video call moments... 📹💑 wo cute cute moments screenshot me capture krne ki aadat... 📸😁 kitna mst lgta hai aapki aisi cute cute photos apne gallery me rkh lu aur bs ek din 100% storage tmhre photo se bhr jao. 💾❤️📲" },
+    { img: stackp[11], text: " To ky jrurt hai ab is photo ko explain krne ki ??? 🤷‍♂️🤔 Hm to khuch kh hi nhi skte is photo ke baare me yrr... Is photo pr mai yy kh skta hu ki btao ky chahyie tmko... hehehheee 🤑🛍️👸" },
+    { img: stackp[12], text: " Aisa lg rha meri dulhan hai mere saamne... 👰💍 lg rha ki shaadi ke baad tm mayke gyi ho aur vc ho rha... hehehheeee 🤭📞💖" },
+    { img: stackp[13], text: " Kahe muh bnayi ho hmar jaan ho... 🥺😒 Na na maaro na hmko... hm bure nhi hai bs aise higlti se mera phone ss le leta hai... 🙄📱 Mai thode na liya hu, mera phone liya hai mere se bina ouche aur fir mujhe dikha diya, meri glti thode na hai, isilye no gussa 🤥🤣🙏" },
+    { img: stackp[14], text: " Haayeee yrrr... kitna pyaar a rha ekdm... 💓🥺 aisa feel ho rha na ki jaise heart me se koi chemical release ho rha ekdm dhk dhk ho rha hai... 🧪💗 ekdm bs mn kr rha hai aa kr baith jau tmhre pass... ufff hehehehhehe 🏃‍♂️🫂😽" },
+    { img: stackp[15], text: " Yy mulakat kitna pyaara tha... 🎁🥺 mere liye kitna pyaara pyaara gift diya gya tha, mai to utna acha nhi bna paya hu... aise hardcopy me nhi de paya tereko... solly baby 😔🧸💕" },
+    { img: stackp[16], text: " Heelooo my dear panda... 🐼❄️ my winter panda cutiee baby... sch me apki simle na... ho hi nhi skti aapki smile se achi kisi aur ki smile... uff babyyy you arre the Miss Universe babyy !! 👑🌍✨" },
+    { img: stackp[17], text: " Bs dekhta rhu is tasweer ko... 👀🖼️ aur muskurata rhu dekh dekh kr bs aapko... hehehheee babyyy... !! Happpy Birthday !!! 🎂🥳💝" },
+    { img: stackp[18], text: " Yy wala suit meko bhut acha lgta hai... 👗👌 mn rta hai is suit me aapko saamne se dekhu aur fir ekdm yaar se gle lga lu yrrrr.... 🫂🤗 aaaaaannn babyyy i love youuuu.... bula loo mujhe apne pass babyyy 🥺✈️❤️" },
+    { img: stackp[19], text: " Yy need se uth kr video call... 😴📹 hehehee ky hi to mst lgta hai.. aise niharat rhu bs aapko ji... hehehhehe i lovee you baby 🫶💤💞" },
+    { img: stackp[20], text: " Ooo meri do chhoti wali babyy... 👧🎀 my small babyyy hehehhee... tu to hr look me mujhe psnd hai yrrr... hayeee rabba... 🛐😍 love you baby... you are my cute cute jaan... my cutiee sweetieeee 🍬🍭" },
+    { img: stackp[21], text: " Haayee geele bikhre baal... 🚿🌬️ hehehee mai to sch me aise words me hr cheez explain hi na kr pau.... Bs bhutt saaraa love you love youuuu 💘♾️😘" },
+    { img: stackp[22], text: " Happy Birthday, my love. 🎂🎉 Apki saari wishess aise  hi puri hoti rhe... aur aage bdhti rho meri jaan !! 🌟🙏🥳" },
   ],
   
   proposalVideo1: "../rec.mp4",
@@ -90,17 +88,17 @@ const APP_DATA = {
     { date: "Today", title: "Happy Birthday", desc: "Celebrating the most amazing woman in the world. My everything." },
   ],
 
-  reasonsList: [
-    "Yy bhi koi baat hai puchne ki kyu special ho tm ?? Butt fir bhi bta hi deta hu mai...",
-    "Hr subh ki good morning aur good night sirf tmse hi... hr din ka same ritual... hehehhee",
-    "Tmhri itni care krna mere liye... ki mai khuch bolu ya na bolu to tmhe pata chl jata hai... uff babyyy meri jaan tu kitni special hai yrrr(❁´◡`❁)",
-    "Kisi bhi baat ko mnwana ho... yy to chutki ka khel hai aapke liye... heheheee",
-    "Aapke pyar krne ki adayein pyaari pyaari... thodu si baat se preshn ho jati ho... ",
-    "Kitne pyaare-pyaare gifts bnati deti ho... btao koi bnayega aise kisi ldke ke liye... are ghnata koi bnata hai... yy to aapki ekdm cuteness hai... hehehhee",
-    "Aur meri gltiyo ko maaf kr dena... haan mnana to pdta hi hai... lkin haan maaf to kr hi deti ho tm... hehehe baby meri cutieee",
-    "Aur wo pyaari si smile aapki... jisko dekhne ke liye tarsu mai... aur aap patt pattt photo de kr hmko khus kr deti hai...",
-    "Aur pta hai... jb aise apna muh bnati ho cute wala... ummm aisee muh bna kr... ekdm mst lgti ho babyyy",
-    "Bas being you... that's more than enough for me to fall in love with you every single day all over again."
+reasonsList: [
+    "Yy bhi koi baat hai puchne ki kyu special ho tm ?? 🤷‍♂️❤️ Butt fir bhi bta hi deta hu mai... 😉✨",
+    "Hr subh ki good morning aur good night sirf tmse hi... ☀️🌙 hr din ka same ritual... hehehhee 🔄🥰",
+    "Tmhri itni care krna mere liye... ki mai khuch bolu ya na bolu to tmhe pata chl jata hai... 🥺💞 uff babyyy meri jaan tu kitni special hai yrrr(❁´◡`❁) ✨🌹",
+    "Kisi bhi baat ko mnwana ho... yy to chutki ka khel hai aapke liye... 🤏😎 heheheee 😏👑",
+    "Aapke pyar krne ki adayein pyaari pyaari... thodu si baat se preshn ho jati ho... 🥺🤏💗💃",
+    "Kitne pyaare-pyaare gifts bnati deti ho... 🎁✂️ btao koi bnayega aise kisi ldke ke liye... are ghnata koi bnata hai... 🔔🤣 yy to aapki ekdm cuteness hai... hehehhee 🥺💝",
+    "Aur meri gltiyo ko maaf kr dena... 🙏🥺 haan mnana to pdta hi hai... lkin haan maaf to kr hi deti ho tm... 🫂💞 hehehe baby meri cutieee 😘✨",
+    "Aur wo pyaari si smile aapki... 😊✨ jisko dekhne ke liye tarsu mai... aur aap patt pattt photo de kr hmko khus kr deti hai... 📸💃🥰",
+    "Aur pta hai... jb aise apna muh bnati ho cute wala... 😚😠 ummm aisee muh bna kr... ekdm mst lgti ho babyyy 😂❤️",
+    "Bas being you... that's more than enough for me to fall in love with you every single day all over again. 🌹♾️💑"
   ],
 
   quiz: [
@@ -108,24 +106,38 @@ const APP_DATA = {
     { question: "What is my favorite nickname for you?", options: ["Chinti", "Palkuu", "Babu", "Shona"], correctAnswer: 1 },
     { question: "How much do I love you?", options: ["A lot", "To the moon", "Infinity & Beyond", "More than pizza"], correctAnswer: 2 }
   ],
-
-  messages: [
-    { id: 1, title: "To My Best Friend", text: "Thank you for being the most amazing partner anyone could ask for. Tmhri presence hi mere liye sb khuch hai... jha tm ho bs wo mere liye sbse best place hai. Hmesa mere saath rhi ho meko hmesa shi rste pr chlati hai.. koi glti hai to daat lgati hai... ekdm best best best friend you are... Hehehehe" },
-    { id: 2, title: "My Strength", text: "Your smile is the only thing I need to get through a bad day. You are my rock, my safe place, and my greatest adventure." },
-    { id: 3, title: "The Little Things", text: "Teri chhoti chhoti cute cute si hrkate hi ekdm mujhe daily aur pyar me kuda deta hai... wo natkhat hrkate... chidhana preshn krna fir pyr krna... hehehhee yy sb ekdm mt pucho babyyyy... Ummaaa lovee youuu babyyy" },
-    { id: 4, title: "Our Future", text: "I can't wait to grow old with you, creating a million more memories along the way. Happy Birthday, my love!" },
+messages: [
+    { 
+      id: 1, 
+      title: "To My Best Friend", 
+      text: "Thank you for being the most amazing partner anyone could ask for. 👫❤️ Tmhri presence hi mere liye sb khuch hai... 🌍✨ jha tm ho bs wo mere liye sbse best place hai. 🏡💕 Hmesa mere saath rhi ho meko hmesa shi rste pr chlati hai.. 🛣️🙌 koi glti hai to daat lgati hai... 😤🤏 ekdm best best best friend you are... 👯‍♀️💎 Hehehehe 😁💖" 
+    },
+    { 
+      id: 2, 
+      title: "My Strength", 
+      text: "Your smile is the only thing I need to get through a bad day. 😊☀️ You are my rock, my safe place, and my greatest adventure. 🪨🛡️🏔️❤️" 
+    },
+    { 
+      id: 3, 
+      title: "The Little Things", 
+      text: "Teri chhoti chhoti cute cute si hrkate hi ekdm mujhe daily aur pyar me kuda deta hai... 🥺🤏💗 wo natkhat hrkate... 🤪👻 chidhana preshn krna fir pyr krna... 😈😚 hehehhee yy sb ekdm mt pucho babyyyy... 🙈💘 Ummaaa lovee youuu babyyy 💋👩‍❤️‍💋‍👨💞" 
+    },
+    { 
+      id: 4, 
+      title: "Our Future", 
+      text: "I can't wait to grow old with you, creating a million more memories along the way. 👵👴📸 Happy Birthday, my love! 🎂🥂🎊" 
+    },
   ],
-
   voiceNotes: [
-    { id: 1, duration: "0:45", date: "10:00 AM", src: "1st.m4a" },
-    { id: 2, duration: "1:20", date: "10:05 AM", src: "W.m4a" },
-    { id: 3, duration: "0:15", date: "10:10 AM", src: "3.m4a" },
+    { id: 1, duration: "03:26", date: "10:00 AM", src: "1st.m4a" },
+    { id: 2, duration: "05:39", date: "10:05 AM", src: "W.m4a" },
+    { id: 3, duration: "01:08", date: "10:10 AM", src: "3.m4a" },
   ],
 
   customTextChat: [
-    "Happy birthday my dear love! Happpy birthday so so mucch my loveeee... Bhagwan aapki saari wishes puri kre meri jaan, meri cutiee piee ka aaj bday hai... heheheee meri jaan hai yy to... (❁´◡`❁) Aisi hi mukurati rho aage bdhti rho meri cutiee meri jaan... yy 4 saal ka safar aise hi krte krtee lifeitme ka safar bna rhe... My cutiee Happpy Birhtday ",
-    "My bestie ji... Btayiee aapko kaun sa kaise gift chahyie bubu... hehee ab chotu motu gift to mai bhi de hi skta hu... hehehhee. Aj ka din best din hai bcoz today is the birthday of my love... haayee meri raani, mera shona, mera kuchu puchu, love youuuu so mucch... Happpy Birthdayyy tooo youuu !!!",
-    "Apke pass aa kr bday mnane ka spna spna hi rhega... pta nhi kb aisa pyaaara sa mauka ayega ki acche se aapke saath me rh kr bday mna payee... aaaannnnn aise bday mnana hai... sb rhe butt mai bhi rhu ekdm mst bday celebrate krenge... haayee ekdm mje aayenge... cuteee day hoga wo sb to ekdm. ",
+    "Happy birthday my dear love! 🎂🎉 Happpy birthday so so mucch my loveeee... ❤️🥰 Bhagwan aapki saari wishes puri kre meri jaan 🙏✨, meri cutiee piee ka aaj bday hai... heheheee 🍬🍭 meri jaan hai yy to... (❁´◡`❁) 😘 Aisi hi mukurati rho aage bdhti rho meri cutiee meri jaan... 😊🚀 yy 4 saal ka safar aise hi krte krtee lifeitme ka safar bna rhe... 💑♾️ My cutiee Happpy Birhtday 🥳🎈🎁",
+    "My bestie ji... 👯‍♀️✨ Btayiee aapko kaun sa kaise gift chahyie bubu... 🎁🤔 hehee ab chotu motu gift to mai bhi de hi skta hu... 🤏😉 hehehhee. Aj ka din best din hai bcoz today is the birthday of my love... 🌟💖 haayee meri raani 👑, mera shona, mera kuchu puchu 🥺🤏, love youuuu so mucch... 💋💞 Happpy Birthdayyy tooo youuu !!! 🎶🎂🎊",
+    "Apke pass aa kr bday mnane ka spna spna hi rhega... 🥺💭💔 pta nhi kb aisa pyaaara sa mauka ayega ki acche se aapke saath me rh kr bday mna payee... 🕰️✈️👫 aaaannnnn aise bday mnana hai... 😭😭 sb rhe butt mai bhi rhu ekdm mst bday celebrate krenge... 🥂🎉 haayee ekdm mje aayenge... 🤩💃 cuteee day hoga wo sb to ekdm. 🌈✨❤️",
   ],
 
   imageMessages: [
